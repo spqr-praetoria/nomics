@@ -33,5 +33,5 @@ RSpec.describe Nomics::Rest::Currencies do
     ]
   ]
 
-  include_examples('mapped endpoints', endpoints)
+  include_examples('mapped endpoints for Nomics API', endpoints)
 end
