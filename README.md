@@ -20,9 +20,50 @@ Or install it yourself as:
 
     $ gem install nomics
 
+## Configuration
+Configure nomics with your API-Key and the URL
+
+```ruby
+@nomics_api_client = Nomics::Client.new do |config|
+  config.api_key = 'YOUR_API_KEY'
+  config.base_url = 'https://api.nomics.com/v1'
+end
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+For available options please hop over to the Nomics API docs here [https://nomics.com/docs](https://nomics.com/docs)
+
+***Available endpoints***
+Currencies
+```ruby
+@nomics_api_client.currencies_ticker(options_hash)
+@nomics_api_client.currencies_metadata(options_hash)
+```
+
+Markets
+```ruby
+@nomics_api_client.markets(options_hash)
+@nomics_api_client.market_cap_history(options_hash)
+```
+
+Volume
+```ruby
+@nomics_api_client.volume(options_hash)
+```
+
+Exchange rates
+```ruby
+@nomics_api_client.exchange_rates(options_hash)
+@nomics_api_client.exchange_rates_history(options_hash)
+```
+
+## Response structure
+
+The response will always return a hashed response containing the response code and data
+```ruby
+{ code: "200", data: [...] }
+```
 
 ## Development
 
