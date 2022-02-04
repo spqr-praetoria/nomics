@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
+require 'pry'
 require_relative 'nomics/version'
-
-module Nomics
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative 'nomics/client'
