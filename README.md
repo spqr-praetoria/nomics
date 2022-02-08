@@ -21,7 +21,7 @@ Or install it yourself as:
     $ gem install nomics
 
 ## Configuration
-Configure nomics with your API-Key and the URL
+Configure Nomics with your API-Key and the URL
 
 ```ruby
 @nomics_api_client = Nomics::Client.new do |config|
