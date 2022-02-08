@@ -21,7 +21,7 @@ Configure Nomics with your API-Key and the URL
 
 ```ruby
 @nomics_api_client = Nomics::Client.new do |config|
-  config.api_key = 'YOUR_API_KEY'
+  config.api_key = 'YOUR_API_KEY_HERE'
   config.base_url = 'https://api.nomics.com/v1'
 end
 ```
@@ -33,25 +33,27 @@ For available options please hop over to the Nomics API docs here [https://nomic
 ***Available endpoints***
 Currencies
 ```ruby
-@nomics_api_client.currencies_ticker(options_hash)
-@nomics_api_client.currencies_metadata(options_hash)
+@nomics_api_client.currencies_ticker(ids: 'BTC,ETH', interval: '1d')
+@nomics_api_client.currencies_metadata(ids: 'BTC,ETH,XRP', attributes: 'id,name,logo_url')
 ```
 
 Markets
 ```ruby
-@nomics_api_client.markets(options_hash)
-@nomics_api_client.market_cap_history(options_hash)
+# Note that start and end time are rfc3339 format
+@nomics_api_client.markets(exchange: 'binance', base: 'BTC,ETH,LTC', quote: 'BTC,ETH,BNB')
+@nomics_api_client.market_cap_history(start: '2018-02-08T12:23:48+00:00', end: '2018-05-08T12:23:48+00:00')
 ```
 
 Volume
 ```ruby
-@nomics_api_client.volume(options_hash)
+# Note that start and end time are rfc3339 format
+@nomics_api_client.volume_history(start: '2018-02-08T12:23:48+00:00', end: '2018-05-08T12:23:48+00:00', convert: 'EUR')
 ```
 
 Exchange rates
 ```ruby
-@nomics_api_client.exchange_rates(options_hash)
-@nomics_api_client.exchange_rates_history(options_hash)
+@nomics_api_client.exchange_rates
+@nomics_api_client.exchange_rates_history(currency: 'BTC', start: '2018-02-08T12:23:48+00:00', end: '2018-05-08T12:23:48+00:00')
 ```
 
 ## Response structure
