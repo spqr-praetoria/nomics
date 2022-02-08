@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  gem 'pry'
   gem 'rubocop', '~> 1.25.1'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
